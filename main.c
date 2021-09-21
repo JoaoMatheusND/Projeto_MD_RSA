@@ -4,6 +4,7 @@
 //Sérgio Augusto de Leite Melo Filho
 //Tércio Calazans
 //Wemerson da Silva Ancelmo
+//codigo levemente alterado
 
 #include <stdio.h>
 #include <ctype.h>
