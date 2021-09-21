@@ -18,9 +18,13 @@ int mdc(LLD a, LLD b){
 
 //funcso para verificar se um numero é primo, retorna 1 se sim, retorna 0 caso nao
 int primalidade(LLD num){
-  if(num == 2 || num == 3 || num == 5 || num == 7) return 1;
-  else if(num%2 == 0 || num%3 == 0 || num%5 == 0 || num%7 == 0) return 0;
-  else return 1;
+  int count = 0;
+    
+    for(int i=1; i<=num; i++)
+        if(num%i == 0) count++;
+    
+    if(count == 2) return 1;
+    else return 0;
 }
 
 //funcao para encontrar o inverso da congruencia "a mod b" baseado no algoritimo de euclides e igualdade de Bézout;
