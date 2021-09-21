@@ -49,16 +49,16 @@ int euclides_extendido(LLD a, LLD b){
 }
 
 //funcao que calcula uma funcao enponencia junto a uma congruencia, pegando o resto da divisao.
-/*Essa funcao eh a principal, onde a criptografia realmente acontece "modo" eh o numero n(multiplicacao de 2 numeors primos) esse eh fixo.
-a "base": varia de acordo com a funcao chamada, para a criptografia o numero "base" é do alfabeto baseado na tabela ASCII, no caso desse projeto adaptado para o A/a começar em 2, para a desencriptografia a "base" eh a letra encriptografa, ou seja, que ja passou por esse processo.
+/*Essa funcao eh a principal, onde a criptografia realmente acontece "n" eh o numero n(multiplicacao de 2 numeors primos) esse eh fixo.
+a "c": varia de acordo com a funcao chamada, para a criptografia o numero "c" é do alfabeto baseado na tabela ASCII, no caso desse projeto adaptado para o A/a começar em 2, para a desencriptografia a "c" eh a letra encriptografa, ou seja, que ja passou por esse processo.
 o expoente tambem varia, para a criptografia é usado o expoente da chave publica, para desencriptografia é usado o expoente equivalente a da inversao do expoente da chave publica modulo (p-1)(q-1)*/ 
 //ps: pode ser feito com recursao, mas dependendo do expoente gasta muito mais memoria
 
-LLD exponenciacao_modular(LLD base, LLD expoente, LLD modo){
+LLD exponenciacao_modular(LLD c, LLD expoente, LLD n){
   LLD i, aux = 1;
 
   for(i = 0; i < expoente; i++){
-  aux = (aux*base)%modo;
+  aux = (aux*c)%n;
   }
   return aux;
 }
