@@ -13,12 +13,17 @@
 
 //funcao para calcular o mdc entre 2 numeros
 int mdc(LLD a, LLD b){
+  /*
   if(b == 0) return a;
   else return mdc(b, a%b);
+  */
+
+  return (b == 0) ? a : mdc(b, a%b);
 }
 
 //funcso para verificar se um numero é primo, retorna 1 se sim, retorna 0 caso nao
 int primalidade(LLD num){
+  /*
   int count = 0;
     
     for(int i=1; i<=num; i++)
@@ -26,6 +31,16 @@ int primalidade(LLD num){
     
     if(count == 2) return 1;
     else return 0;
+    ]*/
+
+    if((num <= 1) || (num%2 == 0) || (num%3 == 0)) return 0;
+    if(num <= 3) return 1;
+
+    for(LLD i = 5; i*i <= num; i += 6){
+      (num%i == 0 || num%(i+2) == 0) ? return 0 : continue;
+    }
+    
+    return 1;
 }
 
 //funcao para encontrar o inverso da congruencia "a mod b" baseado no algoritimo de euclides e igualdade de Bézout;
